@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cosmic Chronicles — Edukasi Sejarah & Astronomi</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(ellipse at center, #0b0b1a 0%, #000011 100%);
+      color: #e6e6ff;
+      font-family: 'Segoe UI', 'Georgia', sans-serif;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -300px;
+      width: 280px;
+      height: 100vh;
+      background: rgba(8, 8, 25, 0.95);
+      backdrop-filter: blur(8px);
+      border-right: 1px solid rgba(80, 80, 180, 0.3);
+      padding: 2rem 0;
+      transition: left 0.4s ease;
+      z-index: 1000;
+    }
+
+    .sidebar.active {
+      left: 0;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.4rem;
+      color: #b0b0ff;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0 1rem;
+    }
+
+    .sidebar li {
+      margin: 1.2rem 0;
+    }
+
+    .sidebar a {
+      color: #c8c8ff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      display: block;
+      padding: 0.6rem 0;
+      transition: color 0.2s;
+    }
+
+    .sidebar a:hover {
+      color: #ffffff;
+    }
+
+    /* Main Content */
+    .main {
+      padding: 2rem 1.5rem;
+      margin-left: 0;
+      transition: margin-left 0.4s;
+    }
+
+    .toggle-btn {
+      position: fixed;
+      top: 1.5rem;
+      left: 1.5rem;
+      background: rgba(30, 30, 60, 0.8);
+      color: #b0b0ff;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 6px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    section {
+      display: none;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    section.active {
+      display: block;
+      animation: fadeIn 0.6s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 1.2rem;
+      background: linear-gradient(to right, #8a8aff, #ffffff);
+      -webkit-background-clip: truetext;
+      background-clip: text;
+      color: transparent;
+    }
+
+    h2 {
+      color: #a0a0ff;
+      margin: 1.5rem 0 0.8rem;
+      font-size: 1.4rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: #d8d8ff;
+      font-size: 1.02rem;
+    }
+
+    .topic {
+      margin: 2rem 0;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(100, 100, 200, 0.15);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 2rem 0;
+      color: #7a7acc;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .toggle-btn { top: 1rem; left: 1rem; }
+      .main { padding: 1.5rem 1rem; }
+      h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Toggle Sidebar -->
+  <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <h2>Cosmic Chronicles</h2>
+    <ul>
+      <li><a href="#" onclick="showSection('home')">Home</a></li>
+      <li><a href="#" onclick="showSection('sejarah')">Sejarah</a></li>
+      <li><a href="#" onclick="showSection('astronomi')">Astronomi</a></li>
+      <li><a href="#" onclick="showSection('penerbit')">Penerbit</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main">
+
+    <!-- Home -->
+    <section id="home" class="active">
+      <h1>Selamat Datang, Penjelajah Ilmu!</h1>
+      <p>Di tengah keheningan alam semesta dan derasnya arus sejarah, ada satu kekuatan yang tak pernah padam: <strong>rasa ingin tahu</strong>.</p>
+      <p>Website ini dibuat untukmu yang percaya bahwa memahami bintang sama pentingnya dengan memahami peradaban manusia. Di sini, kita belajar bukan hanya untuk tahu, tapi untuk <em>terinspirasi</em>.</p>
+      <p>“<em>Orang bijak belajar dari sejarah. Orang cerdas belajar dari alam semesta.</em>” — Selamat menjelajah!</p>
+    </section>
+
+    <!-- Sejarah -->
+    <section id="sejarah">
+      <h1>Filsuf & Tokoh Sejarah Dunia</h1>
+
+      <div class="topic">
+        <h2>1. Siapa itu Aristoteles?</h2>
+        <p>Aristoteles (384–322 SM) adalah filsuf Yunani kuno, murid Plato, dan guru Alexander Agung. Ia meletakkan dasar logika, etika, politik, biologi, dan fisika. Karyanya seperti <em>Nicomachean Ethics</em> dan <em>Politics</em> masih dibaca hingga kini.</p>
+      </div>
+
+      <div class="topic">
+        <h2>2. Plato dan Akademia</h2>
+        <p>Plato (427–347 SM) mendirikan Akademia, sekolah filsafat pertama di dunia Barat. Ia percaya pada “dunia ide” yang sempurna, dan karyanya <em>Republic</em> menggambarkan masyarakat ideal.</p>
+      </div>
+
+      <div class="topic">
+        <h2>3. Socrates: Bapak Filsafat</h2>
+        <p>Socrates (469–399 SM) tidak menulis apa pun, tapi ajarannya hidup lewat muridnya, Plato. Ia terkenal dengan metode “Socratic” — mengajukan pertanyaan untuk menggali kebenaran.</p>
+      </div>
+
+      <div class="topic">
+        <h2>4. Confucius (Konghucu)</h2>
+        <p>Filsuf Tiongkok (551–479 SM) yang menekankan moralitas, keadilan, dan hormat pada keluarga. Ajarannya menjadi fondasi budaya Asia Timur selama ribuan tahun.</p>
+      </div>
+
+      <div class="topic">
+        <h2>5. Ibnu Sina (Avicenna)</h2>
+        <p>Filsuf dan ilmuwan Muslim Persia (980–1037 M). Buku <em>Al-Qanun fi al-Tibb</em> menjadi rujukan kedokteran di Eropa selama 600 tahun.</p>
+      </div>
+
+      <div class="topic">
+        <h2>6. Marcus Aurelius</h2>
+        <p>Kaisar Romawi sekaligus filsuf Stoa (121–180 M). Dalam buku <em>Meditations</em>, ia menulis tentang ketenangan batin di tengah kesulitan.</p>
+      </div>
+
+      <div class="topic">
+        <h2>7. Hypatia dari Alexandria</h2>
+        <p>Matematikawan, astronom, dan filsuf perempuan (350–415 M) yang mengajar filsafat Neoplatonisme. Ia simbol akal di tengah kegelapan fanatisme.</p>
+      </div>
+
+      <div class="topic">
+        <h2>8. Al-Farabi</h2>
+        <p>Filsuf Muslim (872–950 M) yang dikenal sebagai “Guru Kedua” setelah Aristoteles. Ia menggabungkan filsafat Yunani dengan pemikiran Islam.</p>
+      </div>
+
+      <div class="topic">
+        <h2>9. Immanuel Kant</h2>
+        <p>Filsuf Jerman (1724–1804) yang mengubah cara kita memandang pengetahuan, moral, dan estetika. Karyanya <em>Critique of Pure Reason</em> monumental.</p>
+      </div>
+
+      <div class="topic">
+        <h2>10. Sun Tzu</h2>
+        <p>Strateg militer Tiongkok (abad ke-5 SM), penulis <em>The Art of War</em>, yang ajarannya digunakan bukan hanya di medan perang, tapi juga bisnis dan politik.</p>
+      </div>
+    </section>
+
+    <!-- Astronomi -->
+    <section id="astronomi">
+      <h1>Keajaiban Alam Semesta</h1>
+
+      <div class="topic">
+        <h2>1. Cara Membedakan Bintang dan Planet</h2>
+        <p>Bintang memancarkan cahayanya sendiri (karena fusi nuklir), sedangkan planet hanya memantulkan cahaya bintang. Di langit malam, bintang “berkedip” karena turbulensi atmosfer, sementara planet tampak stabil dan tidak berkedip.</p>
+      </div>
+
+      <div class="topic">
+        <h2>2. Apakah Tata Surya Bergerak?</h2>
+        <p>Ya! Seluruh tata surya bergerak mengelilingi pusat galaksi Bima Sakti dengan kecepatan sekitar 828.000 km/jam. Satu putaran penuh (satu “tahun galaksi”) butuh sekitar 225–250 juta tahun.</p>
+      </div>
+
+      <div class="topic">
+        <h2>3. Apa Itu Nebula?</h2>
+        <p>Nebula adalah awan raksasa di ruang angkasa yang terdiri dari gas (terutama hidrogen) dan debu kosmik. Nebula adalah “tempat lahir bintang”.</p>
+      </div>
+
+      <div class="topic">
+        <h2>4. Bagaimana Nebula Terbentuk?</h2>
+        <p>Nebula terbentuk dari sisa ledakan bintang (supernova) atau awan gas antarbintang yang runtuh karena gravitasi. Saat materi di dalamnya memadat, suhu dan tekanan naik hingga memicu fusi nuklir — lahir bintang baru!</p>
+      </div>
+
+      <div class="topic">
+        <h2>5. Apa Itu Lubang Hitam (Black Hole)?</h2>
+        <p>Black hole adalah wilayah ruang dengan gravitasi sangat kuat sehingga tidak ada yang bisa lolos, bahkan cahaya. Terbentuk dari bintang masif yang runtuh setelah habis bahan bakarnya.</p>
+      </div>
+
+      <div class="topic">
+        <h2>6. Mengapa Langit Malam Gelap?</h2>
+        <p>Meski alam semesta penuh bintang, langit malam gelap karena alam semesta memiliki usia terbatas (~13,8 miliar tahun) dan sedang mengembang — cahaya dari bintang terjauh belum sempat sampai ke kita.</p>
+      </div>
+
+      <div class="topic">
+        <h2>7. Apa Itu Tahun Cahaya?</h2>
+        <p>Tahun cahaya adalah satuan jarak, bukan waktu. Satu tahun cahaya = jarak yang ditempuh cahaya dalam satu tahun (~9,46 triliun km).</p>
+      </div>
+
+      <div class="topic">
+        <h2>8. Planet Mana yang Paling Panas?</h2>
+        <p>Venus, bukan Merkurius! Meski lebih jauh dari Matahari, Venus memiliki atmosfer tebal yang menjebak panas (efek rumah kaca ekstrem), suhunya bisa mencapai 470°C.</p>
+      </div>
+
+      <div class="topic">
+        <h2>9. Apa Itu Pulsar?</h2>
+        <p>Pulsar adalah bintang neutron yang berputar sangat cepat dan memancarkan gelombang radio secara teratur seperti “sinyal lighthouse”. Ditemukan pertama kali tahun 1967.</p>
+      </div>
+
+      <div class="topic">
+        <h2>10. Apakah Ada Kehidupan di Luar Bumi?</h2>
+        <p>Belum ditemukan bukti pasti, tapi ilmuwan yakin kemungkinannya tinggi. Ribuan exoplanet (planet di luar tata surya) ditemukan, beberapa berada di “zona layak huni”.</p>
+      </div>
+    </section>
+
+    <!-- Penerbit -->
+    <section id="penerbit">
+      <h1>Tentang Penerbit</h1>
+      <p>Website edukasi ini dibuat dan dikelola oleh:</p>
+      <h2 style="color: #8a8aff; margin: 1.2rem 0;">AINUR ROFIK</h2>
+      <p>Seorang pencinta sejarah dan pengagum keindahan alam semesta. Percaya bahwa ilmu pengetahuan dan peradaban manusia adalah dua sisi dari mata uang yang sama: <strong>keingintahuan</strong>.</p>
+      <p>© 2025 Cosmic Chronicles — Semua konten dibuat untuk edukasi dan inspirasi.</p>
+    </section>
+
+    <footer>
+      Cosmic Chronicles — Ilmu yang Menyatu dengan Bintang
+    </footer>
+
+  </main>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('active');
+    }
+
+    function showSection(id) {
+      // Hide all sections
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      // Show selected
+      document.getElementById(id).classList.add('active');
+      // Close sidebar on mobile
+      document.getElementById('sidebar').classList.remove('active');
+    }
+
+    // Close sidebar when clicking outside
+    document.addEventListener('click', (e) => {
+      const sidebar = document.getElementById('sidebar');
+      const toggle = document.querySelector('.toggle-btn');
+      if (!sidebar.contains(e.target) && !toggle.contains(e.target) && sidebar.classList.contains('active')) {
+        sidebar.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
+
